@@ -49,7 +49,7 @@ body {
 	flex-wrap: wrap;
 	width: 100vw;
 	height: 100vh;
-	background-image: url('../images/bgimg.jpg');
+	background-image: url('../assets/images/bgimg.jpg');
 	background-size: cover;
 	font-family: var(--font-family);
 }
