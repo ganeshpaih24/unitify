@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE-edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+	<meta name="description" content="A Collection of all the commonly used Unit Converters.">
+	<!--CSS Styles-->
+	<link rel="stylesheet" href="assets/css/style.css" />
+	<!--Favicons-->
+	<link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-16x16.png">
+	<link rel="manifest" href="assets/images/site.webmanifest">
+	<!--Animate CSS CDN-->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+	<title>Unit Converter</title>
+</head>
+
+<body onload="tabChangeFunction(0),selectedUpdate(0)">
+	<div class="container">
+		<!--Top Navigation-->
+		<nav>
+			<h1>Unit Converter</h1> </nav>
+		<main>
+			<!--Sidebar-->
+			<section class="sidebar">
+				<ul>
+					<li class="sidebar-list"> <a class="sidebar-link" href="#" onclick="tabChangeFunction(0)">Length</a> </li>
+					<li class="sidebar-list"> <a class="sidebar-link" href="#" onclick="tabChangeFunction(2)">Mass</a> </li>
+					<li class="sidebar-list"> <a class="sidebar-link" href="#" onclick="tabChangeFunction(4)">Volume</a> </li>
+					<li class="sidebar-list"> <a class="sidebar-link" href="#" onclick="tabChangeFunction(6)">Temperature</a> </li>
+					<li class="sidebar-list"> <a class="sidebar-link" href="#" onclick="tabChangeFunction(8)">Time</a> </li>
+				</ul>
+			</section>
+			<section class="Inner-container">
+        <!--Guide-->
+				<div class="Intro">
+					<h1>All the commonly used Unit Converters in one place!
+          </h1>
+					<p> A Quick Guide:
+						<br>
+						<ol>
+							<li> Choose the units you want to convert "from" and "to" </li>
+							<li> Enter any number in the input box. </li>
+							<li> You get the output in no time! Change the units given in sidebar for other units. </li>
+						</ol>
+					</p>
+				</div>
+        <!--Converter-->
+				<div class="flex-container">
+					<div class="Input-class" id="Input-class">
+						<div class="Input-div">
+							<label for="Input-Label">Input:</label>
+							<br>
+							<input type="text" id="Input-value" name="Input-Value" maxlength="12" autofocus onKeyUp="CalculateUnit()"> </div>
+						<div class="Length-data" id="Length-data">
+							<select class="Unit-1" name="Unit-1" size="6" onchange="selectedUpdate(0),CalculateUnit(),tabChangeFunction(0)">
+								<option value="Meter">Meter (m)</option>
+								<option value="Kilometer">Kilometer (km)</option>
+								<option value="Centimeter">Centimeter (cm)</option>
+								<option value="Millimeter">Millimeter (mm)</option>
+								<option value="Micrometer">Micrometer (μm)</option>
+								<option value="Nanometer">Nanometer (nm)</option>
+								<option value="Decimeter">Decimeter (dm)</option>
+								<option value="Mile">Mile (mi)</option>
+								<option value="inch">inch (in)</option>
+								<option value="Yard">Yard (yd)</option>
+								<option value="Foot">Foot (ft)</option>
+								<option value="Light-Year">Light Year (ly)</option>
+								<option value="Terameter">Micron (μ)</option>
+								<option value="Parsec">Parsec (pc)</option>
+								<option value="Astronomical Unit">Astronomical Unit (AU)</option>
+								<option value="Nautical Mile">Nautical Mile</option>
+								<option value="Fermi">Fermi (F)</option>
+							</select>
+						</div>
+						<div class="Mass-data" id="Mass-data">
+							<select class="Unit-1" name="Unit-1" size="6" onchange="selectedUpdate(0),CalculateUnit(),tabChangeFunction(2)">
+								<option value="Kilogram">Kilogram (kg)</option>
+								<option value="Gram">Gram (g)</option>
+								<option value="Milligram">Milligram (mg)</option>
+								<option value="Ton">Ton (t)</option>
+								<option value="Pound">Pound (lbs))</option>
+								<option value="Ounce">Ounce (oz)</option>
+								<option value="Carat">Carat (ct)</option>
+								<option value="AMU">Atomic Mass Unit (u)</option>
+								<option value="Quarter">Quarter (qr)</option>
+								<option value="Quintal">Quintal (cwt)</option>
+								<option value="Grain">Grain (gr)</option>
+							</select>
+						</div>
+						<div class="Volume-data" id="Volume-data">
+							<select class="Unit-1" name="Unit-1" size="6" onchange="selectedUpdate(0),CalculateUnit(),tabChangeFunction(4)">
+								<option value="Cubic Meter">Cubic Meter (mᶟ)</option>
+								<option value="Cubic Kilometer">Cubic Kilometer (kmᶟ)</option>
+								<option value="Cubic Centimeter">Cubic Centimeter (cmᶟ)</option>
+								<option value="Cubic Millimeter">Cubic Millimeter (mmᶟ)</option>
+								<option value="Liter">Liter (l))</option>
+								<option value="Milli Liter">Milli Liter (mL)</option>
+								<option value="Gallon">Gallon (gal)</option>
+								<option value="Quart">Quart (qt)</option>
+								<option value="Pint">Pint (pt)</option>
+								<option value="Cup">Cup</option>
+								<option value="Tablespoon">Tablespoon</option>
+								<option value="Teaspoon">Teaspoon</option>
+								<option value="Barrel">Barrel (bbl)</option>
+							</select>
+						</div>
+						<div class="Temperature-data" id="Temperature-data">
+							<select class="Unit-1" name="Unit-1" size="6" onchange="selectedUpdate(0),CalculateUnit(),tabChangeFunction(6)">
+								<option value="Kelvin">Kelvin (K)</option>
+								<option value="Celsius">Celsius (°C)</option>
+								<option value="Fahrenheit">Fahrenheit (°F)</option>
+							</select>
+						</div>
+						<div class="Time-data" id="Time-data">
+							<select class="Unit-1" name="Unit-1" size="6" onchange="selectedUpdate(0),CalculateUnit(),tabChangeFunction(8)">
+								<option value="Second">Second (s)</option>
+								<option value="Millisecond">Millisecond (ms)</option>
+								<option value="Minute">Minute (min)</option>
+								<option value="Hour">Hour (h)</option>
+								<option value="Day">Day (d)</option>
+								<option value="Week">Week</option>
+								<option value="Month">Month)</option>
+								<option value="Year">Year</option>
+								<option value="Microsecond">Microsecond (s)</option>
+								<option value="Shake">shake</option>
+								<option value="Septennial">Septennial</option>
+							</select>
+						</div>
+					</div>
+					<div class="Output-class" id="Output-class">
+						<div class="Output-div">
+							<label for="Output-Label">Output:</label>
+							<br>
+							<input type="text" id="Output-value" maxlength="12" name="Output-value" readonly> </div>
+						<div class="Length-data-2" id="Length-data-2">
+							<select class="Unit-2" name="Unit-2" size="6" onchange="selectedUpdate(1),CalculateUnit(),tabChangeFunction(1)">
+								<option value="Meter">Meter (m)</option>
+								<option value="Kilometer">Kilometer (km)</option>
+								<option value="Centimeter">Centimeter (cm)</option>
+								<option value="Millimeter">Millimeter (mm)</option>
+								<option value="Micrometer">Micrometer (μm)</option>
+								<option value="Nanometer">Nanometer (nm)</option>
+								<option value="Decimeter">Decimeter (dm)</option>
+								<option value="Mile">Mile (mi)</option>
+								<option value="inch">inch (in)</option>
+								<option value="Yard">Yard (yd)</option>
+								<option value="Foot">Foot (ft)</option>
+								<option value="Light-Year">Light Year (ly)</option>
+								<option value="Terameter">Micron (μ)</option>
+								<option value="Parsec">Parsec (pc)</option>
+								<option value="Astronomical Unit">Astronomical Unit (AU)</option>
+								<option value="Nautical Mile">Nautical Mile</option>
+								<option value="Fermi">Fermi (F)</option>
+							</select>
+						</div>
+						<div class="Mass-data-2" id="Mass-data-2">
+							<select class="Unit-2" name="Unit-2" size="6" onchange="selectedUpdate(1),CalculateUnit(),tabChangeFunction(3)">
+								<option value="Kilogram">Kilogram (kg)</option>
+								<option value="Gram">Gram (g)</option>
+								<option value="Milligram">Milligram (mg)</option>
+								<option value="Ton">Ton (t)</option>
+								<option value="Pound">Pound (lbs))</option>
+								<option value="Ounce">Ounce (oz)</option>
+								<option value="Carat">Carat (ct)</option>
+								<option value="AMU">Atomic Mass Unit (u)</option>
+								<option value="Quarter">Quarter (qr)</option>
+								<option value="Quintal">Quintal (cwt)</option>
+								<option value="Grain">Grain (gr)</option>
+							</select>
+						</div>
+						<div class="Volume-data-2" id="Volume-data-2">
+							<select class="Unit-2" name="Unit-2" size="6" onchange="selectedUpdate(1),CalculateUnit(),tabChangeFunction(5)">
+								<option value="Cubic Meter">Cubic Meter (mᶟ)</option>
+								<option value="Cubic Kilometer">Cubic Kilometer (kmᶟ)</option>
+								<option value="Cubic Centimeter">Cubic Centimeter (cmᶟ)</option>
+								<option value="Cubic Millimeter">Cubic Millimeter (mmᶟ)</option>
+								<option value="Liter">Liter (l))</option>
+								<option value="Milli Liter">Milli Liter (mL)</option>
+								<option value="Gallon">Gallon (gal)</option>
+								<option value="Quart">Quart (qt)</option>
+								<option value="Pint">Pint (pt)</option>
+								<option value="Cup">Cup</option>
+								<option value="Tablespoon">Tablespoon</option>
+								<option value="Teaspoon">Teaspoon</option>
+								<option value="Barrel">Barrel (bbl)</option>
+							</select>
+						</div>
+						<div class="Temperature-data-2" id="Temperature-data-2">
+							<select class="Unit-2" name="Unit-2" size="6" onchange="selectedUpdate(1),CalculateUnit(),tabChangeFunction(7)">
+								<option value="Kelvin">Kelvin (K)</option>
+								<option value="Celsius">Celsius (°C)</option>
+								<option value="Fahrenheit">Fahrenheit (°F)</option>
+							</select>
+						</div>
+						<div class="Time-data-2" id="Time-data-2">
+							<select class="Unit-2" name="Unit-2" size="6" onchange="selectedUpdate(1),CalculateUnit(),tabChangeFunction(9)">
+								<option value="Second">Second (s)</option>
+								<option value="Millisecond">Millisecond (ms)</option>
+								<option value="Minute">Minute (min)</option>
+								<option value="Hour">Hour (h)</option>
+								<option value="Day">Day (d)</option>
+								<option value="week">Week</option>
+								<option value="Month">Month)</option>
+								<option value="Year">Year</option>
+								<option value="Microsecond">Microsecond (s)</option>
+								<option value="Millisecond">Celsius (°C)</option>
+								<option value="Shake">shake</option>
+								<option value="Septennial">Septennial</option>
+							</select>
+						</div>
+					</div>
+				</div>
+      </section>
+		</main>
+	</div><!--Container close-->
+	<script src="./assets/js/script.js"></script>
+</body>
+
+</html>
