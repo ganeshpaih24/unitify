@@ -21,11 +21,11 @@
 <body onload="tabChangeFunction(0),selectedUpdate(0)">
 	<div class="container">
 		<!--Top Navigation-->
-		<nav>
-			<h1>Unit Converter</h1> </nav>
+		<!-- <nav>
+			<h1>Unit Converter</h1> </nav> -->
 		<main>
 			<!--Sidebar-->
-			<section class="sidebar">
+			<!-- <section class="sidebar">
 				<ul>
 					<li class="sidebar-list"> <a class="sidebar-link" href="#" onclick="tabChangeFunction(0)">Length</a> </li>
 					<li class="sidebar-list"> <a class="sidebar-link" href="#" onclick="tabChangeFunction(2)">Mass</a> </li>
@@ -33,10 +33,10 @@
 					<li class="sidebar-list"> <a class="sidebar-link" href="#" onclick="tabChangeFunction(6)">Temperature</a> </li>
 					<li class="sidebar-list"> <a class="sidebar-link" href="#" onclick="tabChangeFunction(8)">Time</a> </li>
 				</ul>
-			</section>
+			</section> -->
 			<section class="Inner-container">
         <!--Guide-->
-				<div class="Intro">
+				<!-- <div class="Intro">
 					<h1>All the commonly used Unit Converters in one place!
           </h1>
 					<p> A Quick Guide:
@@ -47,10 +47,10 @@
 							<li> You get the output in no time! Change the units given in sidebar for other units. </li>
 						</ol>
 					</p>
-				</div>
+				</div> -->
         <!--Converter-->
 				<div class="flex-container">
-					<div class="Input-class" id="Input-class">
+					<!-- <div class="Input-class" id="Input-class">
 						<div class="Input-div">
 							<label for="Input-Label">Input:</label>
 							<br>
@@ -130,8 +130,8 @@
 								<option value="Septennial">Septennial</option>
 							</select>
 						</div>
-					</div>
-					<div class="Output-class" id="Output-class">
+					</div> -->
+					<!-- <div class="Output-class" id="Output-class">
 						<div class="Output-div">
 							<label for="Output-Label">Output:</label>
 							<br>
@@ -212,11 +212,120 @@
 								<option value="Septennial">Septennial</option>
 							</select>
 						</div>
-					</div>
+					</div> -->
 				</div>
       </section>
 		</main>
 	</div><!--Container close-->
+
+	<!-- UI Updates -->
+	<div class="outer-container">
+	<div class="instructions">
+
+	</div>
+	<div class="converter">
+		<div class="input-container">
+			<div class="unit-type">
+					<!-- <div class="option selected">
+						Unit
+					</div>
+					<div class="options-container active">
+						<!-- <div class="selected"  onclick="tabChangeFunction(0)">
+							Length
+						</div> -->
+						<!-- <div class="option" onclick="tabChangeFunction(0)">
+							<input type="radio" class="radio" id="Length" value="Length">
+							<label for="Length">Length</label>
+						</div>
+						<div class="option" onclick="tabChangeFunction(2)">
+							<input type="radio" class="radio" id="Mass" value="Mass">
+							<label for="Mass">Mass</label>
+						</div>
+						<div class="option"  onclick="tabChangeFunction(4)">
+							<input type="radio" class="radio" id="Volume" value="Volume">
+							<label for="Volume">Volume</label>
+						</div>
+						<div class="option"  onclick="tabChangeFunction(6)">
+							<input type="radio" class="radio" id="Temperature" value="Temperature">
+							<label for="Temperature">Temperature</label>
+						</div>
+						<div class="option"  onclick="tabChangeFunction(8)">
+							<input type="radio" class="radio" id="Time" value="Time">
+							<label for="Time">Time</label>
+						</div>
+					</div>
+				</div> -->
+				<div class="custom-select">
+				<select>
+					<option value="Length"  onclick="tabChangeFunction(0)">Length</option>
+					<option value="Mass"  onclick="tabChangeFunction(2)">Mass</option>
+					<option value="Volume"  onclick="tabChangeFunction(4)">Volume</option>
+					<option value="Temperature"  onclick="tabChangeFunction(6)">Temperature</option>
+					<option value="Time" onclick="tabChangeFunction(8)">Time</option>
+				</select>
+				<!-- <span class="custom-arrow"></span> -->
+				</div>
+			</div>
+			<div class="input-unit">
+				<div class="input-value">
+					<input type="text" id="Input-value" name="Input-Value" maxlength="10" autofocus onKeyUp="CalculateUnit()">
+				</div>
+				<div class="input-unit-type">
+					<select class="Unit-1" name="Unit-1" onchange="selectedUpdate(0),CalculateUnit(),tabChangeFunction(0)">
+						<option value="Meter">Meter (m)</option>
+						<option value="Kilometer">Kilometer (km)</option>
+						<option value="Centimeter">Centimeter (cm)</option>
+						<option value="Millimeter">Millimeter (mm)</option>
+						<option value="Micrometer">Micrometer (μm)</option>
+						<option value="Nanometer">Nanometer (nm)</option>
+						<option value="Decimeter">Decimeter (dm)</option>
+						<option value="Mile">Mile (mi)</option>
+						<option value="inch">inch (in)</option>
+						<option value="Yard">Yard (yd)</option>
+						<option value="Foot">Foot (ft)</option>
+						<option value="Light-Year">Light Year (ly)</option>
+						<option value="Terameter">Micron (μ)</option>
+						<option value="Parsec">Parsec (pc)</option>
+						<option value="Astronomical Unit">Astronomical Unit (AU)</option>
+						<option value="Nautical Mile">Nautical Mile</option>
+						<option value="Fermi">Fermi (F)</option>
+					</select>
+				</div>
+			</div>
+			<div class="down-arrow">
+
+			</div>
+		</div>
+		<div class="output-container">
+			<div class="output-unit">
+				<div class="output-value">
+					<input type="text" id="Input-value" name="Output-Value" maxlength="15" readonly>
+				</div>
+				<div class="output-unit-type">
+					<select class="Unit-2" name="Unit-2" size="6" onchange="selectedUpdate(1),CalculateUnit(),tabChangeFunction(1)">
+						<option value="Meter">Meter (m)</option>
+						<option value="Kilometer">Kilometer (km)</option>
+						<option value="Centimeter">Centimeter (cm)</option>
+						<option value="Millimeter">Millimeter (mm)</option>
+						<option value="Micrometer">Micrometer (μm)</option>
+						<option value="Nanometer">Nanometer (nm)</option>
+						<option value="Decimeter">Decimeter (dm)</option>
+						<option value="Mile">Mile (mi)</option>
+						<option value="inch">inch (in)</option>
+						<option value="Yard">Yard (yd)</option>
+						<option value="Foot">Foot (ft)</option>
+						<option value="Light-Year">Light Year (ly)</option>
+						<option value="Terameter">Micron (μ)</option>
+						<option value="Parsec">Parsec (pc)</option>
+						<option value="Astronomical Unit">Astronomical Unit (AU)</option>
+						<option value="Nautical Mile">Nautical Mile</option>
+						<option value="Fermi">Fermi (F)</option>
+					</select>
+				</div>
+			</div>
+		</div>
+	</div>
+	</div>
 	<script src="js/script.js"></script>
 </body>
 
