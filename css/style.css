@@ -1,7 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@1,300;1,400&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@1,300;1,400&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&display=swap');
+
 
 :root {
-	--font-family: 'Open Sans', sans-serif;
+	--font-family: 'Nunito Sans', sans-serif;
 	--normal-font: 400;
 	--bold-font: 700;
 	--bolder-font: 900;
@@ -49,11 +51,13 @@ body {
 	flex-wrap: wrap;
 	width: 100vw;
 	height: 100vh;
-	background-image: url('../assets/images/bgimg.jpg');
-	background-size: cover;
+	background: rgb(249, 136, 137);
+		background: linear-gradient(139deg, rgba(249, 136, 137, 1) 0%, rgba(250, 190, 192, 1) 30%, rgba(0, 124, 245, 1) 100%);
+	/* background-image: url('../assets/images/bgimg.jpg');
+	background-size: cover; */
 	font-family: var(--font-family);
 }
-
+/* 
 .container {
 	height: 100vh;
 	width: 100vw;
@@ -287,4 +291,239 @@ select option:hover {
 		border-radius: 5px;
 		box-shadow: inset 4px 4px 4px var(--primary-color);
 	}
+} */
+
+header{
+	position: absolute;
+	display:flex;
+	box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+	width: 100%;
+}
+
+header img{
+	margin: 1rem;
+	height: 90%;
+}
+header h1{
+	margin: 1rem 0;
+	color: #4ba0f3;
+}
+
+header h1 span{
+	color:#ae5f5f;
+}
+
+.outer-container{
+	display:flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-evenly;
+	width:90%;
+	height:80%;
+	margin:auto;
+}
+
+.outer-container .instructions{
+	width:30%;
+	height:80%;
+	margin:auto;
+	color: #ffffff;
+	box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+	background: linear-gradient(45deg, rgba(238, 180, 184, 1) 0%, rgba(255, 110, 109, 1) 100%);
+}
+
+.outer-container .instructions ul {
+	list-style-type: disc;
+}
+
+.outer-container .instructions h2{
+	padding: 2rem;
+}
+
+.outer-container .instructions ul li{
+	font-size: 1.2rem;
+	margin: 0.3rem;
+}
+
+.outer-container .converter{
+	width:60%;
+	height: 80%;
+	margin:auto;
+	box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.outer-container .converter{
+/* 	position:absolute; */
+
+}
+
+.converter .input-container{
+/* 	background: rgb(238, 180, 184); */
+/* 	background: linear-gradient(45deg, rgba(238, 180, 184, 1) 0%, rgba(255, 110, 109, 1) 100%); */
+	background: rgb(179,226,252);
+	background: linear-gradient(45deg, rgba(179,226,252,1) 0%, rgba(104,198,249,1) 19%, rgba(45,96,145,1) 100%);
+	height: 50%;
+/* 	text-align: center; */
+}
+
+.converter .input-container .unit-type{
+	/* text-align: center; */
+}
+/* 
+.converter .input-container .unit-type .select-box{
+	display: flex;
+	width: 100%;
+}
+
+.converter .input-container .unit-type .select-box .options-container,.converter .input-container .unit-type .select-box .selected{
+	background: #fabec0;
+	max-height: 0;
+	width: 50%;
+	margin: auto;
+	opacity: 0;
+	transition: all 0.4s;
+	border-radius: 8px;
+	overflow: hidden;
+	text-align: center;
+}
+
+.converter .input-container .unit-type .select-box .options-container.active {
+	max-height: 140px;
+	opacity: 1;
+	overflow-y: scroll;
+}
+
+.converter .input-container .unit-type .select-box .options-container::-webkit-scrollbar {
+	width: 8px;
+	background: #a3aad2;
+	border-radius: 0 8px 8px 0;
+}
+
+.converter .input-container .unit-type .select-box .options-container::-webkit-scrollbar-thumb {
+	background: #d8b6c8;
+	border-radius: 0 8px 8px 0;
+}
+
+.converter .input-container .unit-type .select-box .option{
+	padding: 5px 10px;
+	cursor: pointer;
+	color: #8b8eaf;
+}
+
+.converter .input-container .unit-type .select-box .option:hover {
+	color: #fcfcfc;
+}
+
+.converter .input-container .unit-type .select-box label{
+	cursor: pointer;
+}
+
+.converter .input-container .unit-type .select-box .option .radio {
+	display: none;
+} */
+
+select{
+	font-size: 1.5rem;
+	padding: 0.5em;
+	background: none;
+	color: #ffffff;
+	width: fit-content;
+	cursor: pointer;
+	border: none;
+}
+
+option{
+	background: #68c6f9;
+	text-align: center;
+}
+
+.custom-select{
+	width: 70%;
+	margin: auto;
+	position: relative;
+	text-align:center;
+}
+/* 
+.custom-arrow{
+	display: block;
+	background: red;
+	height: 100%;
+	width: 3em;
+	position: absolute;
+	top: 0;
+	right: 0;
+	pointer-events: none;
+} */
+
+.converter .input-container .input-unit,.converter .output-container .output-unit{
+	/* display:flex; */
+	/* text-align:left; */
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+}
+
+.converter .input-container .input-unit .input-value, .converter .output-container .output-unit .output-value{
+	display: inline;
+	width:40%;
+}
+
+.converter .input-container .input-unit .input-value input,.converter .output-container .output-unit .output-value input {
+	width:100%;
+	border:none;
+	border-bottom:3px solid white;
+	background:none;
+	color:white;
+	font-size:2rem;
+	padding:1rem;
+	margin:1rem;
+}
+
+.converter .output-container .output-unit .output-value input{
+	border-bottom:3px solid #4ba0f3;
+	color:#4ba0f3;
+}
+
+.converter .input-container .input-unit .input-unit-type,.converter .output-container .output-unit .output-unit-type{
+	display:inline;
+	margin:1rem;
+	padding:1rem;
+	position:relative;
+
+}
+
+.converter .input-container .input-unit .input-unit-type select,.converter .output-container .output-unit .output-unit-type select{
+	font-size: 1.2rem;
+	height:3rem;
+/* 	position:relative; */
+	margin:auto;
+}
+
+.converter .input-container .input-unit .input-unit-type select option,.converter .input-container .unit-type .custom-select select option{
+	background-color:#488aae;
+}
+
+.converter .output-container .output-unit .output-unit-type select{
+	color:#4ba0f3;
+}
+
+.converter .output-container .output-unit .output-unit-type select option{
+	background-color:#b3e2fc;
+}
+
+.converter .output-container {
+	height: 50%;
+	background: #ffffff;
+}
+
+.converter .output-container{
+	text-align: center;
+}
+
+.converter .output-container .down-arrow img {
+	background: #ffffff;
+	transform: translatey(-50%);
+	border-radius: 10%;
+	box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
