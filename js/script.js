@@ -5,7 +5,7 @@ var selectedUnitIndex, inputUnitIndex, outputUnitIndex;
 
 function openTab(evt, name) {
   var i, tabcontent, name;
-
+  console.log(Input)
   selectedUnitIndex = evt.currentTarget.selectedIndex;
 
   if (selectedUnitIndex == 0) name = 'unit-length';

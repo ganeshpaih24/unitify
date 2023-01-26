@@ -15,6 +15,8 @@
 	<link rel="manifest" href="assets/images/site.webmanifest">
 	<!--Animate CSS CDN-->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+	<!-- Google Icons -->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 	<title>Unit Converter</title>
 </head>
 
@@ -220,9 +222,22 @@
 	</div><!--Container close-->
 
 	<!-- UI Updates -->
+	<header>
+		<img src="assets/images/favicon-32x32.png" alt="">
+		<h1><span>U</span>nitify</h1>
+	</header>
 	<div class="outer-container">
 	<div class="instructions">
-
+		<h2>Steps:</h2>
+		<p>
+			<ul>
+				<li>Select unit type(Length, Mass, etc.).</li>
+				<li>Select input unit(Meter, Kilometer, etc. for Length).</li>
+				<li>Select output unit.</li>
+				<li>Enter the number you want to convert in the input box.</li>
+				<li>Follow these steps and you get the converted output in real time.</li>
+			</ul>
+		</p>
 	</div>
 	<div class="converter">
 		<div class="input-container">
@@ -270,7 +285,7 @@
 			<!-- Length -->
 			<div class="input-unit unit-length tabcontent" id="unit-length">
 				<div class="input-value">
-					<input type="text" id="Input-value" name="Input-Value" maxlength="10" autofocus onKeyUp="CalculateUnit()">
+					<input type="text" class="Input-value" name="Input-Value" maxlength="10" autofocus onKeyUp="CalculateUnit()">
 				</div>
 				<div class="input-unit-type">
 					<select class="Unit-1" name="Unit-1" onchange="selectedUpdate(0),CalculateUnit()">
@@ -297,7 +312,7 @@
 			<!-- mass -->
 			<div class="input-unit unit-mass tabcontent" id="unit-mass">
 				<div class="input-value">
-					<input type="text" id="Input-value" name="Input-Value" maxlength="10" autofocus onKeyUp="CalculateUnit()">
+					<input type="text" class="Input-value" name="Input-Value" maxlength="10" autofocus onKeyUp="CalculateUnit()">
 				</div>
 				<div class="input-unit-type">
 					<select class="Unit-1" name="Unit-1" onchange="selectedUpdate(0),CalculateUnit()">
@@ -318,7 +333,7 @@
 			<!-- volume -->
 			<div class="input-unit unit-volume tabcontent" id="unit-volume">
 				<div class="input-value">
-					<input type="text" id="Input-value" name="Input-Value" maxlength="10" autofocus onKeyUp="CalculateUnit()">
+					<input type="text" class="Input-value" name="Input-Value" maxlength="10" autofocus onKeyUp="CalculateUnit()">
 				</div>
 				<div class="input-unit-type">
 					<select class="Unit-1" name="Unit-1" onchange="selectedUpdate(0),CalculateUnit()">
@@ -341,7 +356,7 @@
 			<!-- temperature -->
 			<div class="input-unit unit-temperature tabcontent" id="unit-temperature">
 				<div class="input-value">
-					<input type="text" id="Input-value" name="Input-Value" maxlength="10" autofocus onKeyUp="CalculateUnit()">
+					<input type="text" class="Input-value" name="Input-Value" maxlength="10" autofocus onKeyUp="CalculateUnit()">
 				</div>
 				<div class="input-unit-type">
 					<select class="Unit-1" name="Unit-1" onchange="selectedUpdate(0),CalculateUnit()">
@@ -354,7 +369,7 @@
 			<!-- time -->
 			<div class="input-unit unit-time tabcontent" id="unit-time">
 				<div class="input-value">
-					<input type="text" id="Input-value" name="Input-Value" maxlength="10" autofocus onKeyUp="CalculateUnit()">
+					<input type="text" class="Input-value" name="Input-Value" maxlength="10" autofocus onKeyUp="CalculateUnit()">
 				</div>
 				<div class="input-unit-type">
 					<select class="Unit-1" name="Unit-1" onchange="selectedUpdate(0),CalculateUnit()">
@@ -373,15 +388,15 @@
 					</select>
 				</div>
 			</div>
-			<div class="down-arrow">
-
-			</div>
 		</div>
 		<div class="output-container">
+			<div class="down-arrow">
+				<img src="https://img.icons8.com/ios-filled/50/4ba0f3/long-arrow-down.png" />
+			</div>
 			<!-- length -->
 			<div class="output-unit unit-length tabcontent" id="unit-length">
 				<div class="output-value">
-					<input type="text" id="Output-value" name="Output-Value" maxlength="15" readonly>
+					<input type="text" class="Output-value" name="Output-Value" maxlength="15" readonly>
 				</div>
 				<div class="output-unit-type">
 					<select class="Unit-2" name="Unit-2" onchange="selectedUpdate(1),CalculateUnit()">
@@ -408,7 +423,7 @@
 			<!-- mass -->
 			<div class="output-unit unit-mass tabcontent" id="unit-mass">
 				<div class="output-value">
-					<input type="text" id="Output-value" name="Output-Value" maxlength="15" readonly>
+					<input type="text" class="Output-value" name="Output-Value" maxlength="15" readonly>
 				</div>
 				<div class="output-unit-type">
 					<select class="Unit-2" name="Unit-2" onchange="selectedUpdate(1),CalculateUnit()">
@@ -429,7 +444,7 @@
 			<!-- volume -->
 			<div class="output-unit unit-volume tabcontent" id="unit-volume">
 				<div class="output-value">
-					<input type="text" id="Output-value" name="Output-Value" maxlength="15" readonly>
+					<input type="text" class="Output-value" name="Output-Value" maxlength="15" readonly>
 				</div>
 				<div class="output-unit-type">
 					<select class="Unit-2" name="Unit-2" onchange="selectedUpdate(1),CalculateUnit()">
@@ -452,7 +467,7 @@
 			<!-- temperature -->
 			<div class="output-unit unit-temperature tabcontent" id="unit-temperature">
 				<div class="output-value">
-					<input type="text" id="Output-value" name="Output-Value" maxlength="15" readonly>
+					<input type="text" class="Output-value" name="Output-Value" maxlength="15" readonly>
 				</div>
 				<div class="output-unit-type">
 					<select class="Unit-2" name="Unit-2" onchange="selectedUpdate(1),CalculateUnit()">
@@ -465,7 +480,7 @@
 			<!-- time -->
 			<div class="output-unit unit-time tabcontent" id="unit-time">
 				<div class="output-value">
-					<input type="text" id="Output-value" name="Output-Value" maxlength="15" readonly>
+					<input type="text" class="Output-value" name="Output-Value" maxlength="20" readonly>
 				</div>
 				<div class="output-unit-type">
 					<select class="Unit-2" name="Unit-2" onchange="selectedUpdate(1),CalculateUnit()">
