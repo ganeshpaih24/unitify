@@ -18,7 +18,8 @@
 	<title>Unit Converter</title>
 </head>
 
-<body onload="tabChangeFunction(0),selectedUpdate(0)">
+<!-- <body onload="tabChangeFunction(0),selectedUpdate(0)"> -->
+<body onload="openTab(event,'unit-length'),selectedUpdate(0)">
 	<div class="container">
 		<!--Top Navigation-->
 		<!-- <nav>
@@ -256,22 +257,23 @@
 					</div>
 				</div> -->
 				<div class="custom-select">
-				<select>
-					<option value="Length"  onclick="tabChangeFunction(0)">Length</option>
-					<option value="Mass"  onclick="tabChangeFunction(2)">Mass</option>
-					<option value="Volume"  onclick="tabChangeFunction(4)">Volume</option>
-					<option value="Temperature"  onclick="tabChangeFunction(6)">Temperature</option>
-					<option value="Time" onclick="tabChangeFunction(8)">Time</option>
+				<select onclick="openTab(event)">
+					<option class="tablinks"  value="Length">Length</option>
+					<option class="tablinks"  value="Mass">Mass</option>
+					<option class="tablinks"  value="Volume">Volume</option>
+					<option class="tablinks"  value="Temperature">Temperature</option>
+					<option class="tablinks"  value="Time">Time</option>
 				</select>
 				<!-- <span class="custom-arrow"></span> -->
 				</div>
 			</div>
-			<div class="input-unit">
+			<!-- Length -->
+			<div class="input-unit unit-length tabcontent" id="unit-length">
 				<div class="input-value">
 					<input type="text" id="Input-value" name="Input-Value" maxlength="10" autofocus onKeyUp="CalculateUnit()">
 				</div>
 				<div class="input-unit-type">
-					<select class="Unit-1" name="Unit-1" onchange="selectedUpdate(0),CalculateUnit(),tabChangeFunction(0)">
+					<select class="Unit-1" name="Unit-1" onchange="selectedUpdate(0),CalculateUnit()">
 						<option value="Meter">Meter (m)</option>
 						<option value="Kilometer">Kilometer (km)</option>
 						<option value="Centimeter">Centimeter (cm)</option>
@@ -292,17 +294,97 @@
 					</select>
 				</div>
 			</div>
+			<!-- mass -->
+			<div class="input-unit unit-mass tabcontent" id="unit-mass">
+				<div class="input-value">
+					<input type="text" id="Input-value" name="Input-Value" maxlength="10" autofocus onKeyUp="CalculateUnit()">
+				</div>
+				<div class="input-unit-type">
+					<select class="Unit-1" name="Unit-1" onchange="selectedUpdate(0),CalculateUnit()">
+						<option value="Kilogram">Kilogram (kg)</option>
+						<option value="Gram">Gram (g)</option>
+						<option value="Milligram">Milligram (mg)</option>
+						<option value="Ton">Ton (t)</option>
+						<option value="Pound">Pound (lbs))</option>
+						<option value="Ounce">Ounce (oz)</option>
+						<option value="Carat">Carat (ct)</option>
+						<option value="AMU">Atomic Mass Unit (u)</option>
+						<option value="Quarter">Quarter (qr)</option>
+						<option value="Quintal">Quintal (cwt)</option>
+						<option value="Grain">Grain (gr)</option>
+					</select>
+				</div>
+			</div>
+			<!-- volume -->
+			<div class="input-unit unit-volume tabcontent" id="unit-volume">
+				<div class="input-value">
+					<input type="text" id="Input-value" name="Input-Value" maxlength="10" autofocus onKeyUp="CalculateUnit()">
+				</div>
+				<div class="input-unit-type">
+					<select class="Unit-1" name="Unit-1" onchange="selectedUpdate(0),CalculateUnit()">
+						<option value="Cubic Meter">Cubic Meter (mᶟ)</option>
+						<option value="Cubic Kilometer">Cubic Kilometer (kmᶟ)</option>
+						<option value="Cubic Centimeter">Cubic Centimeter (cmᶟ)</option>
+						<option value="Cubic Millimeter">Cubic Millimeter (mmᶟ)</option>
+						<option value="Liter">Liter (l))</option>
+						<option value="Milli Liter">Milli Liter (mL)</option>
+						<option value="Gallon">Gallon (gal)</option>
+						<option value="Quart">Quart (qt)</option>
+						<option value="Pint">Pint (pt)</option>
+						<option value="Cup">Cup</option>
+						<option value="Tablespoon">Tablespoon</option>
+						<option value="Teaspoon">Teaspoon</option>
+						<option value="Barrel">Barrel (bbl)</option>
+					</select>
+				</div>
+			</div>
+			<!-- temperature -->
+			<div class="input-unit unit-temperature tabcontent" id="unit-temperature">
+				<div class="input-value">
+					<input type="text" id="Input-value" name="Input-Value" maxlength="10" autofocus onKeyUp="CalculateUnit()">
+				</div>
+				<div class="input-unit-type">
+					<select class="Unit-1" name="Unit-1" onchange="selectedUpdate(0),CalculateUnit()">
+						<option value="Kelvin">Kelvin (K)</option>
+						<option value="Celsius">Celsius (°C)</option>
+						<option value="Fahrenheit">Fahrenheit (°F)</option>
+					</select>
+				</div>
+			</div>
+			<!-- time -->
+			<div class="input-unit unit-time tabcontent" id="unit-time">
+				<div class="input-value">
+					<input type="text" id="Input-value" name="Input-Value" maxlength="10" autofocus onKeyUp="CalculateUnit()">
+				</div>
+				<div class="input-unit-type">
+					<select class="Unit-1" name="Unit-1" onchange="selectedUpdate(0),CalculateUnit()">
+						<option value="Second">Second (s)</option>
+						<option value="Millisecond">Millisecond (ms)</option>
+						<option value="Minute">Minute (min)</option>
+						<option value="Hour">Hour (h)</option>
+						<option value="Day">Day (d)</option>
+						<option value="week">Week</option>
+						<option value="Month">Month)</option>
+						<option value="Year">Year</option>
+						<option value="Microsecond">Microsecond (s)</option>
+						<option value="Millisecond">Millisecond (ms)</option>
+						<option value="Shake">shake</option>
+						<option value="Septennial">Septennial</option>
+					</select>
+				</div>
+			</div>
 			<div class="down-arrow">
 
 			</div>
 		</div>
 		<div class="output-container">
-			<div class="output-unit">
+			<!-- length -->
+			<div class="output-unit unit-length tabcontent" id="unit-length">
 				<div class="output-value">
-					<input type="text" id="Input-value" name="Output-Value" maxlength="15" readonly>
+					<input type="text" id="Output-value" name="Output-Value" maxlength="15" readonly>
 				</div>
 				<div class="output-unit-type">
-					<select class="Unit-2" name="Unit-2" size="6" onchange="selectedUpdate(1),CalculateUnit(),tabChangeFunction(1)">
+					<select class="Unit-2" name="Unit-2" onchange="selectedUpdate(1),CalculateUnit()">
 						<option value="Meter">Meter (m)</option>
 						<option value="Kilometer">Kilometer (km)</option>
 						<option value="Centimeter">Centimeter (cm)</option>
@@ -320,6 +402,85 @@
 						<option value="Astronomical Unit">Astronomical Unit (AU)</option>
 						<option value="Nautical Mile">Nautical Mile</option>
 						<option value="Fermi">Fermi (F)</option>
+					</select>
+				</div>
+			</div>
+			<!-- mass -->
+			<div class="output-unit unit-mass tabcontent" id="unit-mass">
+				<div class="output-value">
+					<input type="text" id="Output-value" name="Output-Value" maxlength="15" readonly>
+				</div>
+				<div class="output-unit-type">
+					<select class="Unit-2" name="Unit-2" onchange="selectedUpdate(1),CalculateUnit()">
+						<option value="Kilogram">Kilogram (kg)</option>
+						<option value="Gram">Gram (g)</option>
+						<option value="Milligram">Milligram (mg)</option>
+						<option value="Ton">Ton (t)</option>
+						<option value="Pound">Pound (lbs))</option>
+						<option value="Ounce">Ounce (oz)</option>
+						<option value="Carat">Carat (ct)</option>
+						<option value="AMU">Atomic Mass Unit (u)</option>
+						<option value="Quarter">Quarter (qr)</option>
+						<option value="Quintal">Quintal (cwt)</option>
+						<option value="Grain">Grain (gr)</option>
+					</select>
+				</div>
+			</div>
+			<!-- volume -->
+			<div class="output-unit unit-volume tabcontent" id="unit-volume">
+				<div class="output-value">
+					<input type="text" id="Output-value" name="Output-Value" maxlength="15" readonly>
+				</div>
+				<div class="output-unit-type">
+					<select class="Unit-2" name="Unit-2" onchange="selectedUpdate(1),CalculateUnit()">
+						<option value="Cubic Meter">Cubic Meter (mᶟ)</option>
+						<option value="Cubic Kilometer">Cubic Kilometer (kmᶟ)</option>
+						<option value="Cubic Centimeter">Cubic Centimeter (cmᶟ)</option>
+						<option value="Cubic Millimeter">Cubic Millimeter (mmᶟ)</option>
+						<option value="Liter">Liter (l))</option>
+						<option value="Milli Liter">Milli Liter (mL)</option>
+						<option value="Gallon">Gallon (gal)</option>
+						<option value="Quart">Quart (qt)</option>
+						<option value="Pint">Pint (pt)</option>
+						<option value="Cup">Cup</option>
+						<option value="Tablespoon">Tablespoon</option>
+						<option value="Teaspoon">Teaspoon</option>
+						<option value="Barrel">Barrel (bbl)</option>
+					</select>
+				</div>
+			</div>
+			<!-- temperature -->
+			<div class="output-unit unit-temperature tabcontent" id="unit-temperature">
+				<div class="output-value">
+					<input type="text" id="Output-value" name="Output-Value" maxlength="15" readonly>
+				</div>
+				<div class="output-unit-type">
+					<select class="Unit-2" name="Unit-2" onchange="selectedUpdate(1),CalculateUnit()">
+						<option value="Kelvin">Kelvin (K)</option>
+						<option value="Celsius">Celsius (°C)</option>
+						<option value="Fahrenheit">Fahrenheit (°F)</option>
+					</select>
+				</div>
+			</div>
+			<!-- time -->
+			<div class="output-unit unit-time tabcontent" id="unit-time">
+				<div class="output-value">
+					<input type="text" id="Output-value" name="Output-Value" maxlength="15" readonly>
+				</div>
+				<div class="output-unit-type">
+					<select class="Unit-2" name="Unit-2" onchange="selectedUpdate(1),CalculateUnit()">
+						<option value="Second">Second (s)</option>
+						<option value="Millisecond">Millisecond (ms)</option>
+						<option value="Minute">Minute (min)</option>
+						<option value="Hour">Hour (h)</option>
+						<option value="Day">Day (d)</option>
+						<option value="week">Week</option>
+						<option value="Month">Month</option>
+						<option value="Year">Year</option>
+						<option value="Microsecond">Microsecond (s)</option>
+						<option value="Millisecond">Millisecond (ms)</option>
+						<option value="Shake">shake</option>
+						<option value="Septennial">Septennial</option>
 					</select>
 				</div>
 			</div>
