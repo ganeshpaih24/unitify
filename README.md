@@ -3,7 +3,7 @@
 - A Utility Webpage for Unit Conversion. 
 - Built using Javascript.
 
-## [Live Link](https://unitconverter24.netlify.app)
+## [Live Link](https://unitify.netlify.app)
 
 ## Screenshot
  <img src="https://i.ibb.co/HpG5YZg/Screenshot-20230127-031258.png">
